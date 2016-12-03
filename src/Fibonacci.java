@@ -10,11 +10,15 @@ public class Fibonacci {
         for(int i = 0; i < COUNT; i++ ) {
             System.out.println("fibonacci(" + i + ")=" + fibonacci.fibonacci(i));
         }
+        System.out.println("=================");
+        fibonacci.fibonacci(-1);
 
     }
 
     private int fibonacci(int i) {
-        if(i == 0) {
+        if(i < 0) {
+            throw new IllegalArgumentException("Wrong argument: " +i);
+        } else if(i == 0) {
             return 0;
         } else if (i == 1) {
             return 1;
